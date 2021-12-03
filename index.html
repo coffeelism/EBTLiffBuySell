@@ -97,20 +97,28 @@
   <script>
     
     async function sendMsg() {
-      if (liff.getContext().type !== "none") {
-        await liff.sendMessages([
-          {
-            "type" : "sticker",
-            "stickerId" : 1,
-            "packageId" : 1
-          },
-          {
-            "type" : "text",
-            "text" : "ทดสอบ"
-          }
-        ])
-      }
-      alert("Message Sent")
+      
+      var e = document.getElementByName("exchange");
+      var value = e.options[e.selectedIndex].value;
+      var text = e.options[e.selectedIndex].text;
+
+      alert(value)
+      
+
+      // if (liff.getContext().type !== "none") {
+      //   await liff.sendMessages([
+      //     {
+      //       "type" : "sticker",
+      //       "stickerId" : 1,
+      //       "packageId" : 1
+      //     },
+      //     {
+      //       "type" : "text",
+      //       "text" : "ทดสอบ"
+      //     }
+      //   ])
+      // }
+      // alert("Message Sent")
     }
 
     async function main() {
