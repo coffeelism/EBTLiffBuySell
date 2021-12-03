@@ -66,17 +66,16 @@
     }
 
     async function sendMsg() {
-      alert("Before Message Sent")
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
-            "type" : "stikcer",
+            "type" : "sticker",
             "stickerId" : 1,
             "packageId" : 1
           }
         ])
       }
-      alert("After Message Sent")
+      alert("Message Sent")
     }
 
     function getContext() {
@@ -112,7 +111,7 @@
 
     async function main() {
       // alert("TEST8-2 - getContext")
-      alert("TEST9-4 - Send Sticker")
+      alert("TEST9-5 - Send Sticker")
       await liff.init({ liffId: "1656688551-qvQXDjzW" })
       getEnvironment()
       getUserProfile()
