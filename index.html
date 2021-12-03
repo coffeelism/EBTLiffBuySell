@@ -8,23 +8,27 @@
 </head>
 
 <body>
-  <label for="fname">Exchange:</label> 
-  <select name='exchange' size='2'>
-    <option value='BINANCE'>BINANCE</option>
-    <option value='BITKUB'>BITKUB</option>
-  </select>
-  <br><br>
+  <div class="block">
+    <label for="fname">Exchange:</label> 
+    <select name='exchange' size='2'>
+      <option selected="selected" value='BINANCE'>BINANCE</option>
+      <option value='BITKUB'>BITKUB</option>
+    </select>
+    <br><br>
+  </div>
 
-  <label for="lname">Market Type:</label> 
-  <select name='marketType' size='2'>
-    <option value='SPOT'>SPOT</option>
-    <option value='FUTURE'>FUTURE</option>
-  </select>
-  <br><br>
-
+  <div class="block">
+    <label for="lname">Market Type:</label> 
+    <select name='marketType' size='2'>
+      <option selected="selected" value='SPOT'>SPOT</option>
+      <option value='FUTURE'>FUTURE</option>
+    </select>
+    <br><br>
+  </div>
+  
   <label for="lname">Buy/Sell:</label> 
   <select name='buySell' size='2'>
-    <option value='BUY'>BUY</option>
+    <option selected="selected" value='BUY'>BUY</option>
     <option value='SELL'>SELL</option>
   </select>
   <br><br>
