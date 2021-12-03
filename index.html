@@ -66,12 +66,16 @@
     }
 
     async function sendMsg() {
-      if (liff.getContext().type != "none") {
+      if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
             "type" : "stikcer",
             "stickerId" : 1,
             "packageId" : 1
+          },
+          {
+            "type" : "text",
+            "text" : "ทดสอบข้อความ"
           }
         ]);
       }
@@ -111,7 +115,7 @@
 
     async function main() {
       // alert("TEST8-2 - getContext")
-      alert("TEST9-2 - Send Sticker")
+      alert("TEST9-3 - Send Sticker")
       await liff.init({ liffId: "1656688551-qvQXDjzW" })
       getEnvironment()
       getUserProfile()
