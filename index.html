@@ -58,7 +58,7 @@
     <br>
     <div class="group"> 
       <label for="fname">Exchange:</label> 
-      <select name='exchange' size='2'>
+      <select id="exchange" name='exchange' size='2'>
         <option selected="selected" value='BINANCE'>BINANCE</option>
         <option value='BITKUB'>BITKUB</option>
       </select>
@@ -68,7 +68,7 @@
 
     <div class="group"> 
       <label for="lname">Market Type:</label> 
-      <select name='marketType' size='2'>
+      <select id="marketType" name='marketType' size='2'>
         <option selected="selected" value='SPOT'>SPOT</option>
         <option value='FUTURE'>FUTURE</option>
       </select>
@@ -77,12 +77,17 @@
 
     <div class="group"> 
       <label for="lname">Buy/Sell:</label> 
-      <select name='buySell' size='2'>
+      <select id="buySell" name='buySell' size='2'>
         <option selected="selected" value='BUY'>BUY</option>
         <option value='SELL'>SELL</option>
       </select>
     </div>    
     <!-- <br><br> -->
+
+    <div class="group"> 
+      <label for="lname">Symbol:</label> <input type="text" id="symbol" name="symbol" value="">
+      <!-- <br><br> -->
+    </div>  
 
     <div class="group"> 
       <label for="lname">Position Size:</label> <input type="text" id="positionSize" name="positionSize" value="0.0">
@@ -98,11 +103,35 @@
     
     async function sendMsg() {
       
-      var e = document.getElementByName("exchange");
-      var value = e.options[e.selectedIndex].value;
-      var text = e.options[e.selectedIndex].text;
+      //var exchange = document.getElementById("exchange").value
+      //alert(exchange)
+      
+      // var value = document.getElementById("positionSize").value
+      // alert(value)
 
-      alert(value)
+      var exchange = document.getElementById("exchange").value
+      var marketType = document.getElementById("marketType").value
+      var buySell = document.getElementById("buySell").value
+      var symbol = document.getElementById("symbol").value.toUpperCase()
+      var positionSize = document.getElementById("positionSize").value
+
+      var message = ""
+      if (buySell == "BUY") {
+        message = exchange + " " + marketType + " " + buySell + " " + symbol + " SIZE " + positionSize
+      } else if (buySell == "SELL") {
+        message = exchange + " " + marketType + " " + buySell + " " + symbol
+      }
+
+      // alert(message)
+
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([
+          {
+            "type" : "text",
+            "text" : message
+          }
+        ])
+      }
       
 
       // if (liff.getContext().type !== "none") {
@@ -123,7 +152,7 @@
 
     async function main() {
       // alert("TEST8-2 - getContext")
-      alert("TEST20")
+      // alert("TEST20")
       await liff.init({ liffId: "1656688551-qvQXDjzW" })
       // getEnvironment()
       // getUserProfile()
