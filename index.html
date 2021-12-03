@@ -182,6 +182,11 @@
       // alert("TEST8-2 - getContext")
       // alert("TEST20")
       await liff.init({ liffId: "1656688551-qvQXDjzW" })
+
+      var paramBuySell = location.search.split('buysell=')[1]
+      // alert(myParam)
+      document.getElementById("buySell").value = paramBuySell.toUpperCase()
+
       // getEnvironment()
       // getUserProfile()
       // getContext()
