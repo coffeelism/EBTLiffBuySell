@@ -38,6 +38,16 @@
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
+    .group {
+      margin-bottom: 40px;
+    }
+    .group label {
+      font-size: 25px;
+    }
+    .group2 label {
+      font-size: 25px;
+    }
+
   </style>
 
   <link rel="stylesheet" href="css/style.css" media="all">
@@ -45,31 +55,38 @@
 
 <body>
 
-    <label for="fname">Exchange:</label> 
-    <select name='exchange' size='2'>
-      <option selected="selected" value='BINANCE'>BINANCE</option>
-      <option value='BITKUB'>BITKUB</option>
-    </select>
-    <br><br>
+    <div class="group"> 
+      <label for="fname">Exchange:</label> 
+      <select name='exchange' size='2'>
+        <option selected="selected" value='BINANCE'>BINANCE</option>
+        <option value='BITKUB'>BITKUB</option>
+      </select>
+    </div>
+    <!-- <br><br> -->
 
 
+    <div class="group"> 
+      <label for="lname">Market Type:</label> 
+      <select name='marketType' size='2'>
+        <option selected="selected" value='SPOT'>SPOT</option>
+        <option value='FUTURE'>FUTURE</option>
+      </select>
+    </div>  
+    <!-- <br><br> -->
 
-    <label for="lname">Market Type:</label> 
-    <select name='marketType' size='2'>
-      <option selected="selected" value='SPOT'>SPOT</option>
-      <option value='FUTURE'>FUTURE</option>
-    </select>
-    <br><br>
+    <div class="group"> 
+      <label for="lname">Buy/Sell:</label> 
+      <select name='buySell' size='2'>
+        <option selected="selected" value='BUY'>BUY</option>
+        <option value='SELL'>SELL</option>
+      </select>
+    </div>    
+    <!-- <br><br> -->
 
-
-    <label for="lname">Buy/Sell:</label> 
-    <select name='buySell' size='2'>
-      <option selected="selected" value='BUY'>BUY</option>
-      <option value='SELL'>SELL</option>
-    </select>
-    <br><br>
-
-    <label for="lname">Position Size:</label> <input type="text" id="positionSize" name="positionSize" value="0.0"><br><br>
+    <div class="group"> 
+      <label for="lname">Position Size:</label> <input type="text" id="positionSize" name="positionSize" value="0.0">
+      <!-- <br><br> -->
+    </div>    
     
     <button id="btnSubmit" class="button button1" onclick="sendMsg()">SUBMIT</button>
 
